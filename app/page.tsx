@@ -1,7 +1,7 @@
 import { Hero } from "@/components/hero"
 import { BookingForm } from "@/components/booking-form"
 import { ServiceCard } from "@/components/service-card"
-import { Plane, MapPin, TreePalm, Fish, Bike, Waves, Ship, Footprints } from "lucide-react"
+import { WhatsAppButton } from "@/components/whatsapp-button"
 
 const servicesData = [
   {
@@ -12,14 +12,15 @@ const servicesData = [
       "https://i.postimg.cc/8CfXRDmJ/1000042906.jpg",
       "https://i.postimg.cc/VN0Zq1WS/1000042907.jpg"
     ],
-    icon: Plane
+    badge: "Popular",
+    price: "20€"
   },
   {
     title: "Agadir City Tour",
     description: "Want to experience the real Agadir? Join us on a private, comprehensive tour that takes you back in time, from the city's rich history to its vibrant, modern present.",
     details: (
       <div className="space-y-3">
-        <p className="font-semibold text-primary">📍 What will you discover on this tour?</p>
+        <p className="font-semibold text-primary">What will you discover on this tour?</p>
         <div className="space-y-2 text-muted-foreground">
           <p><strong className="text-foreground">Agadir Oufella Kasba:</strong> The highest point in the city with breathtaking panoramic views.</p>
           <p><strong className="text-foreground">Souk El Had:</strong> One of Africa&apos;s largest markets with Moroccan spices and traditional crafts.</p>
@@ -35,7 +36,8 @@ const servicesData = [
       "https://i.postimg.cc/tCmz2wT6/1000042835.jpg",
       "https://i.postimg.cc/xTFPthCH/1000042837.jpg"
     ],
-    icon: MapPin
+    badge: "Best Seller",
+    price: "40€"
   },
   {
     title: "Paradise Valley",
@@ -48,7 +50,8 @@ const servicesData = [
       "https://i.postimg.cc/JzZBZ2Bn/image-3.jpg",
       "https://i.postimg.cc/Qd1W1yWB/image-4.jpg"
     ],
-    icon: TreePalm
+    badge: "Must Do",
+    price: "75€"
   },
   {
     title: "Crocodile Park",
@@ -59,7 +62,8 @@ const servicesData = [
       "https://i.postimg.cc/K888vprL/1000042955.jpg",
       "https://i.postimg.cc/Pr4qHnZ2/1000042956.jpg"
     ],
-    icon: Fish
+    badge: "Family",
+    price: "35€"
   },
   {
     title: "Quad & Buggy Safari",
@@ -69,7 +73,8 @@ const servicesData = [
       "https://i.postimg.cc/65cbSmDk/trashed-1776174572-BUGGY-ADVENTURE-06.jpg",
       "https://i.postimg.cc/15B7TjL2/trashed-1776174572-04.jpg"
     ],
-    icon: Bike
+    badge: "Adventure",
+    price: "30€"
   },
   {
     title: "Jet-Ski Adventure",
@@ -78,7 +83,8 @@ const servicesData = [
     galleryImages: [
       "https://i.postimg.cc/xdfzZsVp/trashed-1776174573-agadir-plage-jetski-maroc.jpg"
     ],
-    icon: Waves
+    badge: "Thrill",
+    price: "50€"
   },
   {
     title: "Boat Trip",
@@ -90,16 +96,17 @@ const servicesData = [
       "https://i.postimg.cc/QdHCwV6H/trashed-1776174573-1000043013.jpg",
       "https://i.postimg.cc/gJM1CctW/trashed-1776174573-1000043014.jpg"
     ],
-    icon: Ship
+    badge: "Luxury",
+    price: "45€"
   },
   {
     title: "Camel Ride & BBQ",
     description: "Experience the magic of an authentic Moroccan sunset. Tranquil and enchanting experience. Conclude your day with a traditional BBQ dinner under the stars.",
     details: (
-      <div className="mt-2 p-3 bg-accent/10 rounded-lg">
+      <div className="mt-2 p-3 bg-primary/5 rounded-lg border border-primary/10">
         <p className="font-semibold text-primary mb-2">Available Options:</p>
-        <p className="text-muted-foreground">• Sunset Tour (1h 15min) - 20€</p>
-        <p className="text-muted-foreground">• Complete Package (Tour + BBQ Dinner) - 25€</p>
+        <p className="text-muted-foreground">Sunset Tour (1h 15min) - 20€</p>
+        <p className="text-muted-foreground">Complete Package (Tour + BBQ Dinner) - 25€</p>
       </div>
     ),
     mainImage: "https://i.postimg.cc/mgy4d44W/trashed-1776174571-1000042996.jpg",
@@ -109,7 +116,8 @@ const servicesData = [
       "https://i.postimg.cc/nrqt0BKQ/1000042998.jpg",
       "https://i.postimg.cc/tJFH2Wdx/1000043001.jpg"
     ],
-    icon: Footprints
+    badge: "Sunset",
+    price: "20€"
   }
 ]
 
@@ -152,23 +160,45 @@ export default function Home() {
                 details={service.details}
                 mainImage={service.mainImage}
                 galleryImages={service.galleryImages}
+                badge={service.badge}
+                price={service.price}
               />
             ))}
           </div>
         </div>
       </section>
 
+      {/* Floating WhatsApp Button */}
+      <WhatsAppButton />
+
       {/* Footer */}
       <footer className="bg-foreground text-background py-12 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <h3 className="text-2xl font-serif font-bold mb-4">Tourisme Agadir</h3>
-          <p className="text-background/70 mb-6 max-w-md mx-auto">
-            Your trusted partner for premium transfers and unforgettable activities in Agadir, Morocco.
-          </p>
-          <div className="flex items-center justify-center gap-2 text-background/60 text-sm">
-            <span>© {new Date().getFullYear()} Tourisme Agadir</span>
-            <span>•</span>
-            <span>All rights reserved</span>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h3 className="text-2xl font-serif font-bold mb-4">Tourisme Agadir</h3>
+              <p className="text-background/70 max-w-md">
+                Your trusted partner for premium transfers and unforgettable activities in Agadir, Morocco.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold text-lg mb-4">Contact</h4>
+              <p className="text-background/70">WhatsApp: +212 706 714 859</p>
+              <p className="text-background/70">Location: Agadir, Morocco</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-lg mb-4">Services</h4>
+              <p className="text-background/70">Airport Transfers</p>
+              <p className="text-background/70">City Tours</p>
+              <p className="text-background/70">Adventure Activities</p>
+            </div>
+          </div>
+          <div className="pt-8 border-t border-background/20 text-center">
+            <div className="flex items-center justify-center gap-2 text-background/60 text-sm">
+              <span>© {new Date().getFullYear()} Tourisme Agadir</span>
+              <span>•</span>
+              <span>All rights reserved</span>
+            </div>
           </div>
         </div>
       </footer>
