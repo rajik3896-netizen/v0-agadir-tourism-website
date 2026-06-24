@@ -3,6 +3,8 @@ import { BookingForm } from "@/components/booking-form"
 import { ServiceCard } from "@/components/service-card"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Reviews } from "@/components/reviews"
+import { ReviewForm } from "@/components/review-form"
+import { ReviewsDisplay } from "@/components/reviews-display"
 
 const servicesData = [
   {
@@ -169,7 +171,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Reviews Section */}
+      {/* Customer Reviews Section */}
+      <section className="py-16 px-4 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold font-serif text-center mb-2 text-primary">تقييمات عملائنا</h2>
+          <p className="text-center text-muted-foreground mb-12">اقرأ ما يقوله عملاؤنا الراضون عن خدماتنا</p>
+          
+          <ReviewsDisplay />
+        </div>
+      </section>
+
+      {/* Review Form Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-2xl mx-auto">
+          <ReviewForm />
+        </div>
+      </section>
+
+      {/* Old Reviews Section */}
       <Reviews />
 
       {/* Floating WhatsApp Button */}
