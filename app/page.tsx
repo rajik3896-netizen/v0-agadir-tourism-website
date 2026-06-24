@@ -2,6 +2,8 @@ import { Hero } from "@/components/hero"
 import { BookingForm } from "@/components/booking-form"
 import { ServiceCard } from "@/components/service-card"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewForm } from "@/components/review-form"
+import { ReviewsDisplay } from "@/components/reviews-display"
 
 const servicesData = [
   {
@@ -165,6 +167,23 @@ export default function Home() {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Customer Reviews Section */}
+      <section className="py-16 px-4 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold font-serif text-center mb-2 text-primary">Customer Reviews</h2>
+          <p className="text-center text-muted-foreground mb-12">Read what our satisfied clients say about our services</p>
+          
+          <ReviewsDisplay />
+        </div>
+      </section>
+
+      {/* Review Form Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-2xl mx-auto">
+          <ReviewForm />
         </div>
       </section>
 
