@@ -2,7 +2,6 @@ import { Hero } from "@/components/hero"
 import { BookingForm } from "@/components/booking-form"
 import { ServiceCard } from "@/components/service-card"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { Reviews } from "@/components/reviews"
 import { ReviewForm } from "@/components/review-form"
 import { ReviewsDisplay } from "@/components/reviews-display"
 
@@ -187,9 +186,6 @@ export default function Home() {
           <ReviewForm />
         </div>
       </section>
-
-      {/* Old Reviews Section */}
-      <Reviews />
 
       {/* Floating WhatsApp Button */}
       <WhatsAppButton />
