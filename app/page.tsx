@@ -2,6 +2,7 @@ import { Hero } from "@/components/hero"
 import { BookingForm } from "@/components/booking-form"
 import { ServiceCard } from "@/components/service-card"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { Reviews } from "@/components/reviews"
 
 const servicesData = [
   {
@@ -167,6 +168,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Reviews Section */}
+      <Reviews />
 
       {/* Floating WhatsApp Button */}
       <WhatsAppButton />
