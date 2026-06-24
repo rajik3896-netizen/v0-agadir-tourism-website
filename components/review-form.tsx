@@ -48,11 +48,11 @@ export function ReviewForm() {
       ])
 
       if (error) {
-        setSubmitError('حدث خطأ أثناء إرسال تقييمك. يرجى المحاولة مرة أخرى.')
+        setSubmitError('An error occurred while submitting your review. Please try again.')
         return
       }
 
-      setSubmitMessage('شكراً لتقييمك! سيتم عرضه قريباً')
+      setSubmitMessage('Thank you for your review! It will be displayed soon.')
       setFormData({
         name: '',
         email: '',
@@ -62,7 +62,7 @@ export function ReviewForm() {
         comment: ''
       })
     } catch (error) {
-      setSubmitError('حدث خطأ. يرجى المحاولة مرة أخرى.')
+      setSubmitError('An error occurred. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
@@ -78,8 +78,8 @@ export function ReviewForm() {
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-8">
-      <h3 className="text-2xl font-bold text-primary mb-2">أضف تقييمك</h3>
-      <p className="text-muted-foreground mb-6">شارك تجربتك معنا</p>
+      <h3 className="text-2xl font-bold text-primary mb-2">Share Your Review</h3>
+      <p className="text-muted-foreground mb-6">Tell us about your experience</p>
 
       {submitMessage && (
         <div className="mb-4 p-4 bg-green-50 border border-green-200 text-green-700 rounded">
@@ -98,7 +98,7 @@ export function ReviewForm() {
           <input
             type="text"
             name="name"
-            placeholder="الاسم *"
+            placeholder="Your Name *"
             value={formData.name}
             onChange={handleInputChange}
             required
@@ -107,7 +107,7 @@ export function ReviewForm() {
           <input
             type="email"
             name="email"
-            placeholder="البريد الإلكتروني *"
+            placeholder="Email Address *"
             value={formData.email}
             onChange={handleInputChange}
             required
@@ -119,7 +119,7 @@ export function ReviewForm() {
           <input
             type="text"
             name="country"
-            placeholder="الدولة"
+            placeholder="Country"
             value={formData.country}
             onChange={handleInputChange}
             className="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-accent"
@@ -130,7 +130,7 @@ export function ReviewForm() {
             onChange={handleInputChange}
             className="px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-accent"
           >
-            <option value="">اختر الخدمة</option>
+            <option value="">Select Service</option>
             {services.map(service => (
               <option key={service} value={service}>{service}</option>
             ))}
@@ -138,7 +138,7 @@ export function ReviewForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">التقييم *</label>
+          <label className="block text-sm font-medium mb-2">Rating *</label>
           <div className="flex gap-2">
             {[1, 2, 3, 4, 5].map(star => (
               <button
@@ -158,7 +158,7 @@ export function ReviewForm() {
 
         <textarea
           name="comment"
-          placeholder="تقييمك *"
+          placeholder="Your Review *"
           value={formData.comment}
           onChange={handleInputChange}
           required
@@ -171,7 +171,7 @@ export function ReviewForm() {
           disabled={isSubmitting}
           className="w-full bg-accent text-white font-semibold py-3 rounded hover:opacity-90 disabled:opacity-50 transition"
         >
-          {isSubmitting ? 'جاري الإرسال...' : 'إرسال التقييم'}
+          {isSubmitting ? 'Submitting...' : 'Submit Review'}
         </button>
       </form>
     </div>

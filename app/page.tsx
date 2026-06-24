@@ -173,8 +173,8 @@ export default function Home() {
       {/* Customer Reviews Section */}
       <section className="py-16 px-4 bg-background">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold font-serif text-center mb-2 text-primary">تقييمات عملائنا</h2>
-          <p className="text-center text-muted-foreground mb-12">اقرأ ما يقوله عملاؤنا الراضون عن خدماتنا</p>
+          <h2 className="text-4xl font-bold font-serif text-center mb-2 text-primary">Customer Reviews</h2>
+          <p className="text-center text-muted-foreground mb-12">Read what our satisfied clients say about our services</p>
           
           <ReviewsDisplay />
         </div>

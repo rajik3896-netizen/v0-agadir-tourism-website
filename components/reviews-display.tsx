@@ -71,7 +71,7 @@ export function ReviewsDisplay() {
   if (reviews.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-muted-foreground">لا توجد تقييمات حالياً. كن أول من يترك تقييماً!</p>
+        <p className="text-muted-foreground">No reviews yet. Be the first to share your experience!</p>
       </div>
     )
   }
@@ -97,7 +97,7 @@ export function ReviewsDisplay() {
           <p className="text-gray-700 mb-3 line-clamp-3">{review.comment}</p>
 
           <p className="text-xs text-muted-foreground">
-            {new Date(review.created_at).toLocaleDateString('ar-EG')}
+            {new Date(review.created_at).toLocaleDateString('en-US')}
           </p>
         </div>
       ))}
